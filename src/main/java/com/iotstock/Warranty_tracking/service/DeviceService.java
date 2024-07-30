@@ -18,8 +18,7 @@ public class DeviceService {
     public Device saveDevice(Device device) {
         try {
             return deviceRepository.save(device);
-        } catch (Exception e) {
-            // Hata işlemi
+        } catch (Exception e) {         
             System.err.println("Error saving device: " + e.getMessage());
             return null;
         }
@@ -29,7 +28,6 @@ public class DeviceService {
         try {
             return deviceRepository.findAll();
         } catch (Exception e) {
-            // Hata işlemi
             System.err.println("Error fetching devices: " + e.getMessage());
             return null;
         }
@@ -38,7 +36,6 @@ public class DeviceService {
         try {
             return deviceRepository.findById(id);
         } catch (Exception e) {
-            // Hata işlemi
             System.err.println("Error fetching device by ID: " + e.getMessage());
             return Optional.empty();
         }
@@ -48,7 +45,6 @@ public class DeviceService {
         try {
             deviceRepository.save(device);
         } catch (Exception e) {
-            // Hata işlemi
             System.err.println("Error add device: " + e.getMessage());
         }
         return device;
@@ -58,7 +54,6 @@ public class DeviceService {
         try {
             deviceRepository.save(device);
         } catch (Exception e) {
-            // Hata işlemi
             System.err.println("Error updating device: " + e.getMessage());
         }
         return device;
@@ -68,7 +63,6 @@ public class DeviceService {
         try {
             deviceRepository.deleteById(id);
         } catch (Exception e) {
-            // Hata işlemi
             System.err.println("Error deleting device: " + e.getMessage());
         }
     }

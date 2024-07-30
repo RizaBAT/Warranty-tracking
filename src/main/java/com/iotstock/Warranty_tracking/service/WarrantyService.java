@@ -19,7 +19,6 @@ public class WarrantyService {
         try {
             return warrantyRepository.save(warranty);
         } catch (Exception e) {
-            // Hata işleme
             System.err.println("Error saving warranty: " + e.getMessage());
             return null;
         }
@@ -29,7 +28,6 @@ public class WarrantyService {
         try {
             return warrantyRepository.findAll();
         } catch (Exception e) {
-            // Hata işleme
             System.err.println("Error fetching warranties: " + e.getMessage());
             return null;
         }
@@ -39,7 +37,6 @@ public class WarrantyService {
         try {
             return warrantyRepository.findById(id);
         } catch (Exception e) {
-            // Hata işleme
             System.err.println("Error fetching warranty by ID: " + e.getMessage());
             return Optional.empty();
         }
@@ -49,7 +46,6 @@ public class WarrantyService {
         try {
             warrantyRepository.deleteById(id);
         } catch (Exception e) {
-            // Hata işleme
             System.err.println("Error deleting warranty: " + e.getMessage());
         }
     }
@@ -65,7 +61,6 @@ public class WarrantyService {
             }
             warrantyRepository.save(warranty);
         } catch (Exception e) {
-            // Hata işleme
             System.err.println("Error checking and updating warranty status: " + e.getMessage());
         }
     }
